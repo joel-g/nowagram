@@ -2,7 +2,7 @@
 
   <h1>Nowagrammers</h1>
 
-  <% @users.each do |user| %>
+  <% @self.followers.each do |user| %>
     <div class='user'>
       <b><%= user.username %></b>
       <i><%= user.name %></i>

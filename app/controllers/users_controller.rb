@@ -4,6 +4,8 @@ class UsersController < ApplicationController
   end
 
   def index
+    @self = User.find(session[:user_id])
+    @not_following = User.all - @self.followers
     @users = User.all
   end
 
