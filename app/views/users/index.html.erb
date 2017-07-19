@@ -5,7 +5,7 @@
 <h3>You are following</h3>
   <% @self.following.each do |user| %>
     <div class='user'>
-      <b><%= user.username %></b>
+      <b><%= link_to user.username, user_entries_path(user.id) %></b>
       <i><%= user.name %></i>
     </div>
   <% end %>
@@ -13,7 +13,7 @@
 <h3>You could be following</h3>
   <% @not_following.each do |user| %>
     <div class='user'>
-      <b><%= link_to user.username, user %></b>
+      <b><%= link_to user.username, user_entries_path(user.id) %></b>
       <i><%= user.name %></i>
     </div>
   <% end %>

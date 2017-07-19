@@ -1,1 +1,12 @@
-hello world
+<h2> <%= @user.username %>'s profile </h2>
+<%= link_to 'Home', root_path %>
+
+<ul class='image-list'>
+  <% @entries.each do |entry| %>
+    <li>
+      <b><%= entry.title %></b><br />
+      <img class='entry-image' src="<%= entry.url %>"><br />
+      Caption:<i> <%= entry.caption %> </i><br />
+    </li>
+    <% end %>
+</ul>
