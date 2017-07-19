@@ -13,7 +13,7 @@
 <h3>You could be following</h3>
   <% @not_following.each do |user| %>
     <div class='user'>
-      <b><%= link_to user.username, follow_path %></b>
+      <b><%= link_to user.username, user %></b>
       <i><%= user.name %></i>
     </div>
   <% end %>

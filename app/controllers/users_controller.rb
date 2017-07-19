@@ -18,6 +18,10 @@ class UsersController < ApplicationController
     end
   end
 
+  def show
+    @entries = User.entries
+  end
+
 private
   def user_params
     params.require(:user).permit(:username, :name, :password)
