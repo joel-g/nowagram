@@ -1,0 +1,14 @@
+<% if session[:user_id] %>
+
+  <h1>Nowagrammers</h1>
+
+  <% @users.each do |user| %>
+    <div class='user'>
+      <b><%= user.username %></b>
+      <i><%= user.name %></i>
+    </div>
+  <% end %>
+
+<% else %>
+  <h1>Log in to follow other Nowagrammers!</h1>
+<% end %>
