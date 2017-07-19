@@ -11,5 +11,5 @@
 end
 
 30.times do
-  Follow.create(followee_id: rand(1..10), follower_id: rand(1..10))
+  Follow.create(user_id: rand(1..10), follower_id: rand(1..10))
 end

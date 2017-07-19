@@ -1,4 +1,5 @@
 class Follow < ApplicationRecord
   belongs_to :user
-  validates_uniqueness_of :followee_id, :scope => :foller_id
+  belongs_to :follower, class_name: "User"
+  validates :user_id, uniqueness: { scope: :follower_id }
 end
