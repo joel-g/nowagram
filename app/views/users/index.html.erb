@@ -2,12 +2,22 @@
 
   <h1>Nowagrammers</h1>
 
-  <% @self.followers.each do |user| %>
+<h3>You are following</h3>
+  <% @self.following.each do |user| %>
     <div class='user'>
       <b><%= user.username %></b>
       <i><%= user.name %></i>
     </div>
   <% end %>
+
+<h3>You could be following</h3>
+  <% @not_following.each do |user| %>
+    <div class='user'>
+      <b><%= link_to user.username, follow_path %></b>
+      <i><%= user.name %></i>
+    </div>
+  <% end %>
+
 
 <% else %>
   <h1>Log in to follow other Nowagrammers!</h1>
