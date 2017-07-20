@@ -12,4 +12,9 @@ class User < ApplicationRecord
     list
   end
 
+  def follows?(user)
+    self.following.include?(user)   
+  end
+
+
 end

@@ -18,7 +18,7 @@
   <% @not_following.each do |user| %>
     <div class='user'>
       <b><%= link_to user.username, user_entries_path(user.id) %></b>
-      <i><%= user.name %></i>
+      <i><%= user.name %></i> - <%= link_to "follow", follows_path(user_id: user.id, follower_id: session[:user_id]), method: :post %>
     </div>
   <% end %>
 

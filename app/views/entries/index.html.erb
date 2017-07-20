@@ -1,4 +1,11 @@
 <h2> <%= @user.username %>'s profile </h2>
+<% if session[:user_id] %>
+  <% if @self.follows?(@user) %>
+      <%= link_to 'Unfollow', follows_path(id: 5), method: :delete %>
+  <% else %>
+    <%= link_to 'Follow', follows_path(user_id: @user.id, follower_id: session[:user_id]), method: :post %>
+  <% end %>
+<% end %>
 <%= link_to 'Home', root_path %>
 
 <ul class='image-list'>
